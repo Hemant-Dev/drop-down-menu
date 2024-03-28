@@ -1,4 +1,5 @@
 function createButton(btnName, dropdownId) {
+  const div = document.createElement("div");
   const btn = document.createElement("button");
   btn.textContent = btnName;
   btn.classList.add("dropDownBtn");
@@ -7,6 +8,7 @@ function createButton(btnName, dropdownId) {
 }
 
 function createDropDown(list) {
+  const div = document.createElement("div");
   const dropdownMenu = document.createElement("ul");
   dropdownMenu.classList.add("drop-down-menu");
   dropdownMenu.id = list.id;
@@ -15,13 +17,16 @@ function createDropDown(list) {
     listItem.textContent = item;
     dropdownMenu.appendChild(listItem);
   });
-  return dropdownMenu;
+  div.appendChild(dropdownMenu);
+  return div;
 }
 
 function toggleDropdown(button) {
   const dropdownId = button.getAttribute("data-dropdown");
   const dropdownMenu = document.getElementById(dropdownId);
-  if (dropdownMenu.style.display === "block") {
+  const computedStyle = window.getComputedStyle(dropdownMenu); // Get the computed style
+  if (computedStyle.display === "block") {
+    // Check the computed display style
     dropdownMenu.style.display = "none";
   } else {
     dropdownMenu.style.display = "block";
@@ -66,4 +71,4 @@ const navData = [
   },
 ];
 
-initializeDropdowns(navData);
+// initializeDropdowns(navData);

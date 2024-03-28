@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,31 +7,98 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <!-- <nav class="navbar"></nav>
-    <ul class="drop-down-menu">
-      <li>Javascript</li>
-      <li>Java</li>
-      <li>C#</li>
-      <li>SQL</li>
-    </ul> -->
     <nav class="navbar" id="navbar"></nav>
-    <!-- <ul class="drop-down-menu-1">
-      <li>Javascript</li>
-      <li>Java</li>
-      <li>Zig</li>
-      <li>Go</li>
-      <li>Rust</li>
-      <li>Swift</li>
-    </ul>
-    <ul class="drop-down-menu-2">
-      <li>Zig</li>
-      <li>Javascript</li>
-      <li>Java</li>
-      <li>Swift</li>
-      <li>Rust</li>
-      <li>Go</li>
-    </ul> -->
-    <!-- <script src="./index.js" type="module" defer></script> -->
+
     <script src="./drop-down-menu.js" type="module" defer></script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collapsible Navbar without Bootstrap</title>
+    <style>
+      /* Navbar styles */
+      .navbar {
+        background-color: #f8f9fa;
+        padding: 10px;
+      }
+      .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+      }
+      .navbar-toggler {
+        display: none; /* Hide toggle button by default */
+      }
+      .navbar-nav {
+        display: flex;
+        flex-direction: column;
+      }
+      .nav-item {
+        margin-bottom: 10px;
+      }
+      .nav-link {
+        color: #333;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      /* Toggle button for mobile */
+      @media (max-width: 768px) {
+        .navbar-nav {
+          display: none;
+        }
+        .navbar-toggler {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <!-- Toggle button for mobile -->
+        <button class="navbar-toggler" onclick="toggleNavbar('navbarNav1')">
+          &#9776;
+          <!-- Hamburger icon -->
+        </button>
+        <!-- Navbar links -->
+        <div class="navbar-nav" id="navbarNav1">
+          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#">Services</a>
+          <a class="nav-link" href="#">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <!-- Toggle button for mobile -->
+      <button class="navbar-toggler" onclick="toggleNavbar('navbarNav2')">
+        &#9776;
+        <!-- Hamburger icon -->
+      </button>
+      <!-- Navbar links -->
+      <div class="navbar-nav" id="navbarNav2">
+        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#">Services</a>
+        <a class="nav-link" href="#">Contact</a>
+      </div>
+    </div>
+    <script>
+      function toggleNavbar(navbarName) {
+        var navbarNav = document.getElementById(navbarName);
+        // Toggle the visibility of the navbar links
+        if (navbarNav.style.display === "block") {
+          navbarNav.style.display = "none";
+        } else {
+          navbarNav.style.display = "block";
+        }
+      }
+    </script>
   </body>
 </html>
