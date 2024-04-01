@@ -7,7 +7,6 @@ function createButton(btnName, dropdownId) {
 }
 
 function createDropDown(list) {
-  const div = document.createElement("div");
   const dropdownMenu = document.createElement("ul");
   dropdownMenu.classList.add("drop-down-menu");
   dropdownMenu.id = list.id;
@@ -16,8 +15,7 @@ function createDropDown(list) {
     listItem.textContent = item;
     dropdownMenu.appendChild(listItem);
   });
-  div.appendChild(dropdownMenu);
-  return div;
+  return dropdownMenu;
 }
 
 function toggleDropdown(button) {
@@ -39,8 +37,9 @@ function initializeDropdowns(navData) {
   navData.forEach((data) => {
     const button = createButton(data.buttonName, data.dropdownId);
     const dropdownMenu = createDropDown(data.list);
-    button.addEventListener("click", () => toggleDropdown(button));
+    // button.addEventListener("click", () => toggleDropdown(button));
     const btnWrapper = document.createElement("div");
+    btnWrapper.classList.add("btn-wrapper");
     btnWrapper.appendChild(button);
     btnWrapper.appendChild(dropdownMenu);
     // navbar.appendChild(button);
