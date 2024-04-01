@@ -1,5 +1,4 @@
 function createButton(btnName, dropdownId) {
-  const div = document.createElement("div");
   const btn = document.createElement("button");
   btn.textContent = btnName;
   btn.classList.add("dropDownBtn");
@@ -22,6 +21,7 @@ function createDropDown(list) {
 }
 
 function toggleDropdown(button) {
+  console.log(button);
   const dropdownId = button.getAttribute("data-dropdown");
   const dropdownMenu = document.getElementById(dropdownId);
   const computedStyle = window.getComputedStyle(dropdownMenu); // Get the computed style
@@ -40,8 +40,12 @@ function initializeDropdowns(navData) {
     const button = createButton(data.buttonName, data.dropdownId);
     const dropdownMenu = createDropDown(data.list);
     button.addEventListener("click", () => toggleDropdown(button));
-    navbar.appendChild(button);
-    navbar.appendChild(dropdownMenu);
+    const btnWrapper = document.createElement("div");
+    btnWrapper.appendChild(button);
+    btnWrapper.appendChild(dropdownMenu);
+    // navbar.appendChild(button);
+    // navbar.appendChild(dropdownMenu);
+    navbar.appendChild(btnWrapper);
   });
 }
 
@@ -69,6 +73,14 @@ const navData = [
       ],
     },
   },
+  {
+    buttonName: "Frameworks",
+    dropdownId: "frameworks-dropdown-2",
+    list: {
+      id: "frameworks-dropdown-2",
+      items: ["React", "Angular"],
+    },
+  },
 ];
 
-// initializeDropdowns(navData);
+initializeDropdowns(navData);
