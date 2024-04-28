@@ -19,7 +19,7 @@ function createDropDown(list) {
 }
 
 function toggleDropdown(button) {
-  console.log(button);
+  // console.log(button);
   const dropdownId = button.getAttribute("data-dropdown");
   const dropdownMenu = document.getElementById(dropdownId);
   const computedStyle = window.getComputedStyle(dropdownMenu); // Get the computed style
@@ -42,8 +42,6 @@ function initializeDropdowns(navData) {
     btnWrapper.classList.add("btn-wrapper");
     btnWrapper.appendChild(button);
     btnWrapper.appendChild(dropdownMenu);
-    // navbar.appendChild(button);
-    // navbar.appendChild(dropdownMenu);
     navbar.appendChild(btnWrapper);
   });
 }
@@ -70,14 +68,6 @@ const navData = [
         "Spring",
         "Ruby on Rails",
       ],
-    },
-  },
-  {
-    buttonName: "Frameworks",
-    dropdownId: "frameworks-dropdown-2",
-    list: {
-      id: "frameworks-dropdown-2",
-      items: ["React", "Angular"],
     },
   },
 ];
