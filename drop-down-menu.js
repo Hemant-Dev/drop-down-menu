@@ -37,7 +37,7 @@ function initializeDropdowns(navData) {
   navData.forEach((data) => {
     const button = createButton(data.buttonName, data.dropdownId);
     const dropdownMenu = createDropDown(data.list);
-    // button.addEventListener("click", () => toggleDropdown(button));
+    button.addEventListener("click", () => toggleDropdown(button));
     const btnWrapper = document.createElement("div");
     btnWrapper.classList.add("btn-wrapper");
     btnWrapper.appendChild(button);

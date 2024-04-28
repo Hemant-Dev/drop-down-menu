@@ -47,13 +47,13 @@ li {
   background-color: #fff;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 10px;
-  transform: translateY(-1em);
+  /* transform: translateY(-1em); */
   transition: transform 0.5s;
 }
-
+/* 
 .btn-wrapper:hover {
   .drop-down-menu {
     display: block;
     transform: translateY(0);
   }
-}
+} */
